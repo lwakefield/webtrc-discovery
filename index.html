@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>WebRTC Discovery Example</h1>
+        <script>
+            const DISCOVERY_SERVICE_URL = 'ws://localhost:8000'
+            const socket = new WebSocket(DISCOVERY_SERVICE_URL)
+            socket.addEventListener('open', event => {
+                const message = 'ping from 192.168.0.1'
+                socket.send(message)
+                document.body.innerHTML += `<p>>> ${message}</p>`
+            })
+        </script>
+    </body>
+</html>
